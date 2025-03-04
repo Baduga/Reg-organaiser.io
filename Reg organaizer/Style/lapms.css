@@ -1,0 +1,236 @@
+.lamp{
+    width: 5vw; 
+    height: 5vw;
+    border-radius: 50%;
+    display: flex;
+}
+.lamp-wrap{
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+
+}
+.lamp-wrap-left{
+    margin: 0 5% 0 40%;
+}
+.lamp-wrap-right{
+    margin: 0 40% 0 5%;
+}
+.lamp-left{
+    transform: skewy(-30deg);
+
+}
+.lamp-right{
+    transform: skewy(30deg);
+
+}
+.lamp1{
+    filter: drop-shadow(0 0 20px #00bf8b);
+    background: #00bf8b;
+    animation: lamp1 5s infinite;
+
+
+}
+.lamp2{
+    animation: lamp2 5s infinite;
+    animation-delay: 0.5s;
+    background: #f95f4f;
+    filter: drop-shadow(0 0 20px #f95f4f);
+}
+.lamp3{
+    animation: lamp3 2s infinite;
+    background: #333333;
+    filter: drop-shadow(0 0 0px #333333);
+}
+.lamp4{
+    animation: lamp4 3s infinite;
+    background: #70625f;
+    filter: drop-shadow(0 0 0px #70625f);
+}
+.lamp5{
+    animation: lamp5 8s infinite;
+    background: #70625f;
+    filter: drop-shadow(0 0 0px #70625f);
+}
+.lamp6{
+    animation: lamp6 5s infinite;
+    animation-delay: 0.5s;
+    background: #39bdef;
+    filter: drop-shadow(0 0 20px #39bdef);
+
+}
+@keyframes lamp1 {
+    0%{
+        background: #00bf8b;
+        filter: drop-shadow(0 0 20px #00bf8b);
+    }
+    10%{
+        background: #00bf8b;
+        filter: drop-shadow(0 0 20px #00bf8b);
+    }
+    33%{
+        background: #333333;
+        filter: drop-shadow(0 0 0px #333333);
+
+    }
+    43%{
+        background: #333333;
+        filter: drop-shadow(0 0 0px #333333);
+
+    }
+    66%{
+        background: #39bdef;
+        filter: drop-shadow(0 0 20px #39bdef);
+    }
+    76%{
+        background: #39bdef;
+        filter: drop-shadow(0 0 20px #39bdef);
+    }
+    100%{
+        background: #00bf8b;
+        filter: drop-shadow(0 0 20px #00bf8b);
+    }
+}
+@keyframes lamp2 {
+    0%{
+        background: #f95f4f;
+        filter: drop-shadow(0 0 20px #f95f4f);
+    }
+    10%{
+        background: #f95f4f;
+        filter: drop-shadow(0 0 20px #f95f4f);
+    }
+    33%{
+        background: #00bf8b;
+        filter: drop-shadow(0 0 20px #00bf8b);
+    }
+    43%{
+        background: #00bf8b;
+        filter: drop-shadow(0 0 20px #00bf8b);
+    }
+    66%{
+        background: #333333;
+        filter: drop-shadow(0 0 0px #333333);
+    }
+    76%{
+        background: #333333;
+        filter: drop-shadow(0 0 0px #333333);
+    }
+    100%{
+        background: #f95f4f;
+        filter: drop-shadow(0 0 20px #f95f4f);
+    }
+}
+@keyframes lamp3 {
+    0%{
+        background: #333333;
+        filter: drop-shadow(0 0 0px #333333);
+    }
+    20%{
+        background: #333333;
+        filter: drop-shadow(0 0 0px #333333);
+    }
+
+    50%{
+        background: #39bdef;
+        filter: drop-shadow(0 0 20px #39bdef);
+    }
+
+    70%{
+        background: #39bdef;
+        filter: drop-shadow(0 0 20px #39bdef);
+    }
+    100%{
+        background: #333333;
+        filter: drop-shadow(0 0 0px #333333);
+    }
+}
+@keyframes lamp4 {
+    0%{
+        background: #70625f;
+        filter: drop-shadow(0 0 0px #70625f);
+    }
+    10%{
+        background: #70625f;
+        filter: drop-shadow(0 0 0px #70625f);
+    }
+    33%{
+        background: #f95f4f;
+        filter: drop-shadow(0 0 20px #f95f4f);
+    }
+    43%{
+        background: #f95f4f;
+        filter: drop-shadow(0 0 20px #f95f4f);
+    }
+    66%{
+        background: #39bdef;
+        filter: drop-shadow(0 0 20px #39bdef);
+    }
+    76%{
+        background: #39bdef;
+        filter: drop-shadow(0 0 20px #39bdef);
+    }
+    100%{
+        background: #70625f;
+        filter: drop-shadow(0 0 0px #70625f);
+    }
+}
+@keyframes lamp5 {
+    0%{
+        background: #f95f4f;
+        filter: drop-shadow(0 0 20px #f95f4f);
+
+    }
+    20%{
+        background: #f95f4f;
+        filter: drop-shadow(0 0 20px #f95f4f);
+
+
+    }
+
+    50%{
+        background: #00bf8b;
+        filter: drop-shadow(0 0 20px #00bf8b);
+    }
+
+    70%{
+        background: #00bf8b;
+        filter: drop-shadow(0 0 20px #00bf8b);
+    }
+    100%{
+        background: #f95f4f;
+        filter: drop-shadow(0 0 20px #f95f4f);
+    }
+}
+@keyframes lamp6 {
+    0%{
+        background: #39bdef;
+        filter: drop-shadow(0 0 20px #39bdef);
+    }
+    10%{
+        background: #39bdef;
+        filter: drop-shadow(0 0 20px #39bdef);
+    }
+    33%{
+        background: #70625f;
+        filter: drop-shadow(0 0 0px #70625f);
+    }
+    43%{
+        background: #70625f;
+        filter: drop-shadow(0 0 0px #70625f);
+    }
+    66%{
+        background: #f95f4f;
+        filter: drop-shadow(0 0 20px #f95f4f);
+    }
+    76%{
+        background: #f95f4f;
+        filter: drop-shadow(0 0 20px #f95f4f);
+    }
+    100%{
+        background: #39bdef;
+        filter: drop-shadow(0 0 20px #39bdef);
+    }
+}

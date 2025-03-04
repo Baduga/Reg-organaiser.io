@@ -1,0 +1,141 @@
+.lineChanging {
+    animation: open 2s 1;
+}
+
+.lineChanging .lamp-wrap {
+    animation: lampWrapOpen 2s 1;
+}
+
+.lamp-right {
+    transform: skewy(30deg);
+
+}
+
+.lineChanging .lamp-wrap .lamp1 {
+    filter: drop-shadow(0 0 20px #00bf8b);
+    background: #00bf8b;
+    animation: lamp1 5s infinite, lampOpen 2s 1;
+
+}
+
+.lineChanging .lamp-wrap .lamp2 {
+    animation: lamp2 4s infinite, lampOpen 2s 1;
+    background: #f95f4f;
+    filter: drop-shadow(0 0 20px #f95f4f);
+
+}
+
+.lineChanging .lamp-wrap .lamp3 {
+    animation: lamp3 2s infinite, lampOpen 2s 1;
+    background: #333333;
+    filter: drop-shadow(0 0 0px #333333);
+
+}
+
+.lineChanging .lamp-wrap .lamp4 {
+    animation: lamp4 3s infinite, lampOpen 2s 1;
+    background: #70625f;
+    filter: drop-shadow(0 0 0px #70625f);
+
+}
+
+.lineChanging .lamp-wrap .lamp5 {
+    animation: lamp5 8s infinite, lampOpen 2s 1;
+    background: #70625f;
+    filter: drop-shadow(0 0 0px #70625f);
+
+}
+
+.lineChanging .lamp-wrap .lamp6 {
+    animation: lamp6 5s infinite, lampOpen 2s 1;
+    background: #39bdef;
+    filter: drop-shadow(0 0 20px #39bdef);
+
+}
+
+.lineChanged {
+    height: 5vw;
+    transform: skewy(0deg);
+    margin-top: 0px;
+    box-shadow: none;
+    background: none;
+    z-index: 255;
+}
+
+.lineChanged .lamp-wrap {
+    height: 2.5vw;
+    margin-top: 2vw;
+
+}
+
+.lineChanged .lamp-wrap .lamp {
+    transform: skewy(0deg);
+    width: 2.5vw;
+    height: 2.5vw;
+}
+.contentChanged{
+    background: linear-gradient(90deg, #70625f 50%, #333333 50%);
+    background-position: center;
+}
+@keyframes open {
+
+    25% {
+        height: 10%;
+
+    }
+
+    50% {
+        transform: skewy(0deg);
+        margin-top: 0px;
+    }
+
+    90% {
+        height: 100vw;
+        transform: skewy(0deg);
+        margin-top: 0px;
+
+    }
+
+    100% {
+        height: 100vw;
+        transform: skewy(0deg);
+        margin-top: 0px;
+
+    }
+}
+
+@keyframes lampOpen {
+
+    25% {
+        width: 2.5vw;
+        height: 2.5vw;
+    }
+
+    50% {
+        transform: skewy(0deg);
+
+    }
+
+    90% {
+        transform: skewy(0deg);
+        width: 2.5vw;
+        height: 2.5vw;
+    }
+
+    100% {
+        transform: skewy(0deg);
+        width: 2.5vw;
+        height: 2.5vw;
+    }
+}
+
+@keyframes lampWrapOpen {
+
+
+    0% {}
+
+    100% {
+        height: 2.5vw;
+        margin-top: 2vw;
+    }
+}
