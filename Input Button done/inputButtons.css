@@ -1,0 +1,260 @@
+:root {
+  --your-background-color: #343434;
+  /*Your background color. Need for correct border work */
+  --input-button-width: 200px;
+  /* Any possible value */
+  --input-button-height: 50px;
+  /* Any possible value */
+  --input-button-gradient-color-1: #ff1bdd;
+  /* In HEX-code */
+  --input-button-gradient-color-2: #45CAFF;
+  /* In HEX-code */
+  --input-button-gradient-rule: linear-gradient(to right, var(--input-button-gradient-color-1), var(--input-button-gradient-color-2));
+  /* Add more, or delete one for monocolor*/
+  --input-button-text-area-passive-color: #201f20;
+  /* Any possible value */
+  --input-button-text-area-active-color: #222222;
+  /* Any possible value */
+  --input-button-text-color: #ffffff;
+  /* Any possible value */
+  --input-button-scalingX-in-animation: 5;
+  /* Nubmer. Width while animation going*/
+  --input-button-scalingX-in-end: 2.5;
+  /* Nubmer. Width after animation*/
+  --input-button-transition-time: 1s;
+  /* Count of seconds/miliseconds */
+  --input-button-text-size: 18px;
+  /* Any possible value */
+  --input_button__range-input-height: calc(var(--input-button-height)/5);
+  /* Any possible value */
+  --input_button__range-input-thumb-height:  calc(var(--input-button-height)/2.5);
+  /* Any possible value */
+  --input_button__range-input-thumb-width:  calc(var(--input-button-height)/2.5);
+  /* Any possible value */
+}
+
+.input_button {
+  box-sizing: border-box;
+  width: var(--input-button-width);
+  height: var(--input-button-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: var(--input-button-text-color);
+  border: calc(var(--input-button-height)/1.9) solid transparent;
+  background:
+    linear-gradient(#343434 0 0) padding-box,
+    var(--input-button-gradient-rule) border-box;
+  border-radius: var(--input-button-height);
+  cursor: pointer;
+}
+
+@keyframes input_button-open {
+  0% {
+    border-left: calc(calc(var(--input-button-width)/2)) solid transparent;
+    border-right: calc(calc(var(--input-button-width)/2)) solid transparent;
+    border-top: calc(var(--input-button-height)/2) solid transparent;
+    border-bottom: calc(var(--input-button-height)/2) solid transparent;
+    width: var(--input-button-width);
+  }
+
+  15% {
+    border-left: calc(var(--input-button-width)/2) solid transparent;
+    border-right: calc(var(--input-button-width)/2) solid transparent;
+    border-top: 0 solid transparent;
+    border-bottom: 0 solid transparent;
+    width: var(--input-button-width);
+  }
+
+  50% {
+    border-left: calc(calc(var(--input-button-width)/2)*calc(var(--input-button-scalingX-in-animation)/2)) solid transparent;
+    border-right: calc(calc(var(--input-button-width)/2)*calc(var(--input-button-scalingX-in-animation)/2)) solid transparent;
+    width: calc(var(--input-button-width)*var(--input-button-scalingX-in-animation));
+  }
+
+  100% {
+    border-left: calc(var(--input-button-height)/2) solid transparent;
+    border-right: calc(var(--input-button-height)/2) solid transparent;
+
+  }
+}
+
+.input_button_active {
+  width: var(--input-button-width);
+  height: var(--input-button-height);
+  border-left: calc(var(--input-button-height)/2) solid transparent;
+  border-right: calc(var(--input-button-height)/2) solid transparent;
+  border-top: 0;
+  border-bottom: 0;
+  width: calc(var(--input-button-width)*var(--input-button-scalingX-in-end));
+  animation: input_button-open var(--input-button-transition-time);
+  cursor: auto;
+
+}
+
+.input_button__text {
+  width: calc(var(--input-button-width)/1.5);
+  text-align: center;
+  display: block;
+  user-select: none;
+  cursor: pointer;
+  position: absolute;
+  font-size: var(--input-button-text-size);
+}
+
+
+@keyframes input_button__text {
+  from {
+    opacity: 1;
+    display: inline;
+  }
+
+  50% {
+    transform: translateY(calc(var(--input-button-height)*-1));
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(calc(var(--input-button-height)*-1));
+    opacity: 0;
+    display: none;
+  }
+}
+
+
+.input_button {
+  position: relative;
+}
+
+.input_button_active>.input_button__text {
+  animation: input_button__text calc(var(--input-button-transition-time)/3);
+  display: none;
+}
+
+
+.input_button__input {
+  position: absolute;
+  display: none;
+  color: var(--input-button-text-color);
+  font-size: var(--input-button-text-size);
+  border: none;
+  outline: none;
+
+}
+
+.input_button_active>.input_button__input {
+  display: block;
+  z-index: 1;
+}
+
+
+.input_button__text-input {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  background-color: var(--input-button-text-area-passive-color);
+  color: var(--input-button-text-color);
+  font-size: var(--input-button-text-size);
+  text-align: center;
+  transition: calc(var(--input-button-transition-time)/7);
+}
+
+.input_button_active>.input_button__text-input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+
+}
+
+.input_button__text-input:focus {
+  transform: scaleX(0.95);
+  border-radius: calc(var(--input-button-height)/10);
+  background-color: var(--input-button-text-area-active-color);
+}
+
+.input_button__text-input:hover {
+  background-color: var(--input-button-text-area-active-color);
+}
+
+
+.input_button__range-input {
+  width: 100%;
+  height: var(--input_button__range-input-height);
+  transform: scaleX(0.95);
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: var(--input-button-text-area-passive-color);
+  border: none;
+  border-radius: calc(var(--input-button-height)/2);
+  outline: none;
+  transition: calc(var(--input-button-transition-time)/7);
+  cursor: pointer;
+}
+
+/* Изменение фона при наведении и активности */
+.input_button__range-input:hover,
+.input_button__range-input:active,
+.input_button__text-input:focus {
+  background-color: var(--input-button-text-area-active-color);
+}
+
+.input_button__range-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: var(--input_button__range-input-thumb-width);
+  height: var(--input_button__range-input-thumb-height);
+  border-radius: var(--input-button-height);
+  box-shadow: none;
+  border: none;
+  position: relative;
+  background-color: var(--thumb-color, var(--input-button-gradient-color-1));
+  cursor: pointer;
+  transition: background-color 0s,
+    opacity calc(var(--input-button-transition-time)/2),
+    transform calc(var(--input-button-transition-time)/3);
+  opacity: 0;
+  transform: translateX(calc(calc(var(--input-button-width)/2)*var(--input-button-scalingX-in-end)*-1));
+}
+
+.input_button__range-input::-moz-range-thumb {
+  width: var(--input_button__range-input-thumb-width);
+  height: var(--input_button__range-input-thumb-height);
+  border-radius: var(--input-button-height);
+  box-shadow: none;
+  border: none;
+  position: relative;
+  background-color: var(--thumb-color, var(--input-button-gradient-color-1));
+  cursor: pointer;
+  transition: background-color 0s,
+    opacity calc(var(--input-button-transition-time)/2),
+    transform calc(var(--input-button-transition-time)/2);
+  opacity: 0;
+  transform: translateX(calc(calc(var(--input-button-width)/2)*var(--input-button-scalingX-in-end)*-1));
+
+}
+
+.input_button__range-input_active::-webkit-slider-thumb {
+  opacity: 1;
+  transform: translateX(0);
+  transform: scale(1.01);
+}
+
+.input_button__range-input_active::-moz-range-thumb {
+  opacity: 1;
+  transform: translateX(0);
+  transform: scale(1.01);
+
+}
+
+
+#Count {
+  width: calc(var(--input-button-width)/2);
+  text-align: center;
+  font-size: calc(var(--input-button-text-size)*2);
+  font-family: sans-serif;
+  color: var(--input-button-text-color);
+
+}

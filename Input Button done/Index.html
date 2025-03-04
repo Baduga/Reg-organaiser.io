@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="inputButtons.css">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            background: #343434;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 100px;
+            height: 1000px;
+        }
+    </style>
+    <!-- The textarea button -->
+        <div class="input_button">
+            <p class="input_button__text">Text area</p>
+            <input type="text" class="input_button__input input_button__text-input" placeholder="Type something..." maxlength="30">
+        </div>
+    <!-- End. You can copy and past it to get more. -->
+
+    <!-- The slider output -->
+    <h1 id="Count"> </h1>
+    <!-- The slider button -->
+        <div class="input_button range-input_button" id="1">
+            <p class="input_button__text">Range select</p>
+            <input type="range" class="input_button__input input_button__range-input" type="range" id="cowbell" name="cowbell" min="0" max="100" value="50" step="1">
+        </div>
+
+    <script src="inputButtons.js">
+    </script>
+</body>
+</html>
